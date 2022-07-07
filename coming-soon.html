@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sofbox - Responsive Software Landing Page</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;Raleway:300,400,500,600,700,800,900" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- owl-carousel -->
+    <link rel="stylesheet" href="css/owl-carousel/owl.carousel.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup/magnific-popup.css" />
+    <!-- media element player -->
+    <link href="css/mediaelementplayer.min.css" rel="stylesheet" type="text/css" />
+    <!-- Animate -->
+    <link rel="stylesheet" href="css/animate.css" />
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <!-- variable -->
+    <link rel="stylesheet" href="css/variables.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+     <!-- color -->
+     <link rel="stylesheet" href="css/color.css">
+    <!-- Responsive -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- custom style -->
+    <link rel="stylesheet" href="css/custom.css" />
+ 
+</head>
+
+<body>
+    <!-- loading -->
+    <div id="loading">
+        <div id="loading-center">
+            <div class="loader">
+                <div class="cube">
+                    <div class="sides">
+                        <div class="top"></div>
+                        <div class="right"></div>
+                        <div class="bottom"></div>
+                        <div class="left"></div>
+                        <div class="front"></div>
+                        <div class="back"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- loading End -->
+    <!-- Main Content -->
+    <div class="main-content">
+        <!--======= Coming Soon =======-->
+        <section class="iq-coming overview-block-ptb text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <img class="img-responsive center-block iq-mb-10 wow zoomIn" id="logo_img" data-wow-duration="1s" src="images/logo-footer.png" alt="" style="visibility: visible; animation-duration: 1s; animation-name: zoomIn;">
+                        <div class="big-text iq-tw-7 iq-mt-60">Coming Soon</div>
+                        <h5 class="iq-font-light iq-tw-6 iq-mt-40">We are working very hard to give you the best experience possible!</h5>
+                        <ul id="countdown">
+                            <li><span class="days">00</span>
+                                <p class="days_text">Days</p>
+                            </li>
+                            <li class="seperator">:</li>
+                            <li><span class="hours">00</span>
+                                <p class="hours_text">Hours</p>
+                            </li>
+                            <li class="seperator">:</li>
+                            <li><span class="minutes">00</span>
+                                <p class="minutes_text">Minutes</p>
+                            </li>
+                            <li class="seperator">:</li>
+                            <li><span class="seconds">00</span>
+                                <p class="seconds_text">Seconds</p>
+                            </li>
+                        </ul>
+                        <form class="form-inline iq-subscribe">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="exampleInputName2" placeholder="Enter Your Email Here">
+                            </div>
+                            <a class="button iq-ml-25" href="javascript:void(0)">subscribe</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--======= Coming Soon End =======-->
+    </div>
+    <!-- Main Content END -->
+    <!-- back-to-top -->
+    <div id="back-to-top">
+        <a class="top" id="top" href="#top"> <i class="ion-ios-upload-outline"></i> </a>
+    </div>
+    <!-- back-to-top End -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Main js -->
+    <script src="js/main.js"></script>
+    <!-- Google captcha code Js -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- Custom -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

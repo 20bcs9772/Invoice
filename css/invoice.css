@@ -1,0 +1,268 @@
+:root{
+    --border-bottom-color: rgb(137, 137, 137);
+    --border-bg-color: rgba(63, 81, 181,255);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+main{
+    scroll-behavior: smooth;
+}
+
+.image-input {
+    text-align: center;
+}
+
+.image-input input {
+    display: none;
+}
+
+.image-input label {
+    display: inline-block;
+    background: #FFF;
+    color: rgb(24, 24, 24);
+    font-size: 1.3em;
+    cursor: pointer;
+    padding: 0.8em 1em;
+    /* border-radius: 5px; */
+    background-image: repeating-linear-gradient(-9deg, #999999, #999999 7.83px, transparent 9px, transparent 15.09px, #999999 16px), repeating-linear-gradient(81deg, #999999, #999999 7.83px, transparent 9px, transparent 15.09px, #999999 16px), repeating-linear-gradient(171deg, #999999, #999999 7.83px, transparent 9px, transparent 15.09px, #999999 16px), repeating-linear-gradient(261deg, #999999, #999999 7.83px, transparent 9px, transparent 15.09px, #999999 16px);
+    background-size: 2px 100%, 100% 2px, 2px 100% , 100% 2px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+}
+
+.border-dashed{
+    background-image: repeating-linear-gradient(-9deg, #999999, #999999 7.83px, transparent 9px, transparent 15.09px, #999999 16px), repeating-linear-gradient(81deg, #999999, #999999 7.83px, transparent 9px, transparent 15.09px, #999999 16px), repeating-linear-gradient(171deg, #999999, #999999 7.83px, transparent 9px, transparent 15.09px, #999999 16px), repeating-linear-gradient(261deg, #999999, #999999 7.83px, transparent 9px, transparent 15.09px, #999999 16px);
+    background-size: 2px 100%, 100% 2px, 2px 100% , 100% 2px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+}
+
+.image-input label i {
+    font-size: 125%;
+    /* margin-right: .3rem; */
+}
+
+.image-input label:hover i {
+    animation: shake .35s;
+}
+
+.image-input img {
+    max-width: 100%;
+    max-height: 30vh;
+    padding: none;
+}
+
+.image-input span {
+    text-align: left;
+    cursor: pointer;
+}
+
+
+input[type="text"] {
+    box-sizing: border-box;
+    padding: none;
+    margin: none;
+}
+
+.bg-white{
+    background: whitesmoke ;
+}
+
+.bg-black{
+    background: #131313 ;
+}
+
+.mdl-layout-title{
+    color: #FFF;
+}
+
+.mdl-navigation__link{
+    color: rgb(233, 27, 27);
+}
+
+.cust-dropdown{
+    margin: 10px 0;
+    color: rgb(197, 197, 197);
+    font-size: larger;
+}
+
+.cust-dropdown span{
+    padding-left: 2px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: rgb(197, 197, 197);
+    width: 100%;
+    padding-bottom: 3px;
+    border-bottom: 1.5px solid rgb(211, 210, 210) ;
+    font-family: sans-serif;
+}
+
+.cust-dropdown:focus-within span{
+    border-bottom: 2px solid var(--border-bg-color) ;
+    transition: 0.4s;
+}
+
+.box-drop-even{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.box-drop-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.add-details{
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: start;
+}
+
+.colon{
+    font-weight: 800;
+    font-size: larger;
+    margin: 0 1em;
+}
+
+#table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.checkbox-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    max-width: fit-content;
+}
+
+.total-table{
+    font-size: 1.2em;
+}
+
+tfoot{
+    border-top: 1px solid black;
+}
+
+.content{
+    letter-spacing: 0.5px;
+}
+
+.add-details-table, .add-details-table td{
+    border: none;
+}
+
+.sidebar-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 2.5em;
+    color: #131313;
+    font-size: 1.2em;
+    padding:15px 15px;
+    margin: 5px 0;
+}
+
+.sidebar-links a{
+    padding: 20px 0;
+}
+
+.sidebar-links:hover{
+    background: #eee;
+}
+
+.sidebar-head{
+    font-size: 1.5em;
+}
+
+.display-none{
+    display: none;
+}
+
+.total-table-cont{
+    display: flex;
+    justify-content: end;
+}
+
+
+.input-container input{
+    border: none;
+    border-bottom: 1px solid var(--border-bottom-color);
+    background: none;
+    margin: 3px 0;
+}
+
+.input-container input:hover{
+    border-bottom: 1.5px solid var(--border-bottom-color);
+}
+
+.input-container input:focus{
+    border-bottom: 1.5px solid var(--border-bg-color);
+    color: var(--border-bg-color);
+    font-weight: 600;
+}
+  
+.add-details:hover,.remove-item-container:hover{
+    opacity: 0.8;
+}
+  
+.remove-item-container a{
+    cursor: pointer;
+    margin-bottom: 0.6em;
+    color: black;
+} 
+
+.select-cont select{
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid rgb(192, 191, 191);
+    width: 100%;
+}
+
+#invoice-bill-to, #invoice-bill-from{
+    padding: 35px 0;
+}
+
+.notes, .tcs{
+    display: flex;
+    justify-content: start;
+}
+
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}

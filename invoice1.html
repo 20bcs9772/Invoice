@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Insta Invoicing - By LetsMedia Lab</title>
+    <meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Insta Invoicing - By LetsMedia Lab for creating Invoices">
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="js/maininvoice.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/invoice1.css">
+
+</head>
+
+<body ng-app="invoicing" ng-controller="InvoiceCtrl" class="bg-light">
+
+    <div class="invoice-company text-end text-inverse sticky-top">
+		<span class=" noPrint actions">
+			<a href="#" ng-show="printMode" title="Print" ng-click="printInfo()" class="btn btn-primary ">
+				<i class="fa fa-print t-plus-1 fa-fw fa-lg"></i> Print
+			</a>
+			<!-- <a href="#" title="Reset" class="btn btn-sm btn-secondary" ng-click="clearLocalStorage()">
+				<i class="fa fa-refresh t-plus-1 fa-fw fa-lg"></i> Reset
+			</a>
+			<a href="#" title="Turn On Preview" class="btn btn-sm onprevBtn btn-secondary" onclick="onBtn()"
+				ng-hide="printMode" ng-click="printMode = true;">
+				Turn On Preview
+			</a>
+			<a href="#" title="Turn Off Preview" class="btn btn-sm offprevBtn btn-secondary" onclick="offBtn()"
+				ng-show="printMode" ng-click="printMode = false;">
+				Turn Off Preview
+			</a> -->
+		</span>
+	</div>
+    <div class="container raisedbox" width="1000px" id="invoice">
+        <div class=" branding flex justify-space-between">
+            <div class="head flex-col justify-space-around">
+                <div class="">
+                    <label class="title"> INVOICE </label>
+                </div>
+                <div class="invoice-number-container input-container">
+                    <label for="invoice-number" style="font-size: 1.5em;">Invoice #</label>
+                    <input type="text" id="invoice-number" style="font-size: 1.5em;"
+                        ng-model="invoice.invoice_number" />
+                </div>
+            </div>
+            <div class=" logo-container">
+                <input type="file" id="imgInp" />
+                <img ng-hide="logoRemoved" ng-click="editLogo()" title="Edit Logo" id="company_logo" ng-src="{{ logo }}"
+                    alt="your image" width="200" />
+                <div>
+                    <div class="noPrint" ng-hide="printMode">
+                        <a ng-click="editLogo()" href>Edit Logo </a>
+                        <a ng-click="toggleLogo()" id="remove_logo" href>
+                            <i class="fas fa-eye fa-eye-slash"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row row-no-gutters infos flex justify-space-between">
+            <div class="col-xs-5 bg-light box-style flex flex-col flex-wrap-none justify-start">
+                <b>Bill To</b>
+                <div class="input-container">
+                    {{invoice.customer_info.name}}
+                    <!-- <input type="text" ng-model="invoice.customer_info.name" placeholder="Name" /> -->
+                </div>
+                <div class="input-container">
+                    {{invoice.customer_info.web_link}}
+                    <!-- <input placeholder="Email" type="text" ng-model="invoice.customer_info.web_link" /> -->
+                </div>
+                <div class="input-container">
+                    {{invoice.customer_info.address1}}
+                    <!-- <input type="text" placeholder="Address 1" ng-model="invoice.customer_info.address1" /> -->
+                </div>
+                <div class="input-container">
+                    {{invoice.customer_info.address2}}
+                    <!-- <input type="text" placeholder="Address 2" ng-model="invoice.customer_info.address2" /> -->
+                </div>
+                <p>Service State:
+                {{serviceState}}</p>
+                <div class="">
+                    <select data-ng-hide='printMode' class="" ng-model="serviceState">
+                        <option ng-repeat="x in availableStateIN" value="{{x.name}}">{{x.name}}</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    {{invoice.customer_info.postal}}
+                    <!-- <input type="text" placeholder="ZIP/PIN Code" ng-model="invoice.customer_info.postal" /> -->
+                </div>
+            </div>
+
+
+
+            <div class="col-xs-5 float-right bg-light box-style flex flex-col flex-wrap-none justify-start">
+                <b>Bill From</b>
+                <div class="input-container">
+                    {{invoice.company_info.name}}
+                    <!-- <input type="text" placeholder="Name" ng-model="invoice.company_info.name" /> -->
+                </div>
+                <div class="input-container">
+                    {{invoice.company_info.web_link}}
+                    <!-- <input type="text" placeholder="Email" ng-model="invoice.company_info.web_link" /> -->
+                </div>
+                <div class="input-container">
+                    {{invoice.company_info.address1}}
+                    <!-- <input type="text" placeholder="Address 1" ng-model="invoice.company_info.address1" /> -->
+                </div>
+                <div class="input-container">
+                    {{invoice.company_info.address2}}
+                    <!-- <input type="text" placeholder="Address 2" ng-model="invoice.company_info.address2" /> -->
+                </div>
+                <p>Supplier State:
+                    {{supplierState}}
+                </p>
+                <div class="">
+                    <select data-ng-hide="printMode" ng-model="supplierState">
+                        <option ng-repeat="x in availableStateIN" value="{{x.name}}">{{x.name}}</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    {{invoice.company_info.postal}}
+                    <!-- <input type="text" placeholder="ZIP/PIN Code" ng-model="invoice.company_info.postal" /> -->
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 15px ;">
+            <div class="input-container add-details" title="Add" ng-hide="printMode">
+                <span class="" href ng-click="addnewDetails()">Additional Details</span>
+                <span class="" ng-click="addnewDetails()">
+                    <i class="fas fa-plus fa-sm"></i>
+                </span>
+            </div>
+            <div class="flex invoice-item" ng-repeat="item in additionalDetails.adonitems" ng-animate="'slide-down'">
+                <div class="flex">
+                    <div class="key">
+                        <input ng-model="item.key" placeholder="KEY" />
+                    </div>
+                    <div style="font-weight: bolder ; margin-right: 0.8em; font-size: large;">:</div>
+                    <div class="value">
+                        <input ng-model="item.description" maxlength="50" ng-required placeholder="Value" />
+                    </div>
+                    <div class="remove-item-container remove-item" title="Remove">
+                        <span href ng-hide="printMode" ng-click="removeaddonItem(item)" class="">
+                            <i class="fas fa-times"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-hide='printMode' class="flex justify-space-between" style="margin-bottom: 1em;">
+            <div class="">
+                <label style="font-size:22px;" for="GST"> Generate GST Bill &nbsp;</label>
+                <input ng-model="gst" type="checkbox" class="checkmark" id="GST" title="GST" value="checked"
+                    checked="checked">
+                </label>
+            </div>
+            <div class="input-container" data-ng-hide='printMode'>
+                <select ng-model='currencySymbol' class="btn btn-default"
+                    ng-options='currency.symbol as currency.name for currency in availableCurrencies'></select>
+            </div>
+        </div>
+
+        <div ng-show="gst">
+            <div ng-hide="supplierState != serviceState" class="items-table">
+                <div class="row header">
+                    <div class="col-xs-1">
+                        <div class=" invoice-item">
+                            <div class="col-xs-12 add-item-container" ng-hide="printMode">
+                                <a class="box-btn" title="Add Item" href ng-click="addItem()">
+                                    <i class="fas fa-plus fa-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">Description</div>
+                    <div class="col-xs-1">HSN</div>
+                    <div class="col-xs-1">Quantity</div>
+                    <div class="col-xs-2">Cost {{currencySymbol}}</div>
+                    <div class="col-xs-1">SGST%</div>
+                    <div class="col-xs-1">CGST%</div>
+                    <div class="col-xs-2 text-right">Total</div>
+                </div>
+                <div class="row invoice-item" ng-repeat="item in invoice.items" ng-animate="'slide-down'">
+                    <div class="col-xs-1 remove-item-container">
+                        <a href ng-hide="printMode" ng-click="removeItem(item)" title="Remove Item" class="box-btn">
+                            <i class="fas fa-times fa-lg"></i>
+                        </a>
+                    </div>
+                    <div class="col-xs-3 input-container">
+                        <input ng-model="item.description" placeholder="Description" />
+                    </div>
+                    <div class="col-xs-1 input-container">
+                        <input ng-model="item.hsn" value="HSN1" ng-required size="8" placeholder="HSN" />
+                    </div>
+                    <div class="col-xs-1 input-container">
+                        <input ng-model="item.qty" value="1" size="3" ng-required ng-validate="integer"
+                            placeholder="Quantity" />
+                    </div>
+                    <div class="col-xs-2 input-container">
+                        <input ng-model="item.cost" value="0.00" ng-required ng-validate="number" size="8"
+                            placeholder="Cost" />
+                    </div>
+                    <div class="col-xs-1 input-container">
+                        <input ng-model="item.sgst" value="0.00" ng-required ng-validate="number" size="8"
+                            placeholder="SGST" />
+                    </div>
+                    <div class="col-xs-1 input-container">
+                        <input ng-model="item.cgst" value="0.00" ng-required ng-validate="number" size="8"
+                            placeholder="CGST" />
+                    </div>
+                    <div class="col-xs-2 text-right input-container">
+                        {{(item.cost * item.qty + item.cost * item.qty * item.cgst/100 + item.cost * item.qty *
+                        item.sgst/100) | currency: currencySymbol}}
+                    </div>
+                </div>
+            </div>
+
+            <div ng-hide=" supplierState == serviceState" class="items-table">
+                <div class="row header">
+                    <div class="col-xs-1">
+                        <div class=" invoice-item">
+                            <div class="col-xs-12 add-item-container" ng-hide="printMode">
+                                <a class="box-btn" title="Add Item" href ng-click="addItem()">
+                                    <i class="fas fa-plus fa-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">Description</div>
+                    <div class="col-xs-1">HSN</div>
+                    <div class="col-xs-1">Quantity</div>
+                    <div class="col-xs-2">Cost {{currencySymbol}}</div>
+                    <div class="col-xs-2">IGST {{currencySymbol}}</div>
+                    <div class="col-xs-2 text-right">Total</div>
+                </div>
+                <div class="row invoice-item" ng-repeat="item in invoice.items" ng-animate="'slide-down'">
+                    <div class="col-xs-1 remove-item-container">
+                        <a href ng-hide="printMode" ng-click="removeItem(item)" title="Remove Item" class="box-btn">
+                            <i class="fas fa-times fa-lg"></i>
+                        </a>
+                    </div>
+                    <div class="col-xs-3 input-container">
+                        <input ng-model="item.description" placeholder="Description" />
+                    </div>
+                    <div class="col-xs-1 input-container">
+                        <input ng-model="item.hsn" value="HSN1" ng-required size="8" placeholder="HSN" />
+                    </div>
+                    <div class="col-xs-1 input-container">
+                        <input ng-model="item.qty" value="1" size="4" ng-required ng-validate="integer"
+                            placeholder="Quantity" />
+                    </div>
+                    <div class="col-xs-2 input-container">
+                        <input ng-model="item.cost" value="0.00" ng-required ng-validate="number" size="6"
+                            placeholder="Cost" />
+                    </div>
+                    <div class="col-xs-2 input-container">
+                        <input ng-model="item.igst" value="0.00" ng-required ng-validate="number" size="6"
+                            placeholder="IGST" />
+                    </div>
+                    <div class="col-xs-2 text-right input-container">
+                        {{(item.cost * item.qty + item.cost * item.qty * item.igst/100 ) | currency: currencySymbol}}
+                    </div>
+                </div>
+            </div>
+            <div class="row res">
+                <div class="col-xs-10 text-right">Sub Total</div>
+                <div class="col-xs-2 text-right">{{invoiceSubTotal() | currency: currencySymbol}}</div>
+            </div>
+            <div class="row res" ng-hide="supplierState == serviceState">
+                <div class="col-xs-10 text-right">Net Tax (GST/IGST): </div>
+                <div class="col-xs-2 text-right">{{calculateNetGSTTax() | currency: currencySymbol}}</div>
+            </div>
+            <div class="row res" ng-hide="supplierState != serviceState">
+                <div class="col-xs-10 text-right">Net Tax (CGST+SGST): </div>
+                <div class="col-xs-2 text-right">{{calculateNetTax() | currency: currencySymbol}}</div>
+            </div>
+            <div class="row res">
+                <div class="col-xs-10 text-right">Discount(%): <input ng-model="invoice.discount" ng-validate="number" style="width: 43px;"></div>
+                <div class="col-xs-2 text-right">
+                    {{calculateDiscountGST() | currency: currencySymbol}}
+                </div>
+            </div>
+            <div class="row res">
+                <div class="col-xs-10 text-right">Grand Total:</div>
+                <div class="col-xs-2 text-right" ng-hide="supplierState == serviceState">
+                    {{calculateGrandTotalwithIGST() | currency: currencySymbol}}
+                </div>
+                <div class="col-xs-2 text-right" ng-hide="supplierState != serviceState">
+                    {{calculateGrandTotalwithCGSGST() | currency: currencySymbol}}
+                </div>
+            </div>
+        </div>
+
+        <div ng-show="!gst">
+            <div class="items-table">
+                <div class="row header">
+                    <div class="col-xs-1">
+                        <div class=" invoice-item">
+                            <div class="col-xs-12 add-item-container" ng-hide="printMode">
+                                <a class="box-btn" title="Add Item" href ng-click="addItem()">
+                                    <i class="fas fa-plus fa-lg"></i>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-5">Description</div>
+                    <div class="col-xs-2">Quantity</div>
+                    <div class="col-xs-2">Cost {{currencySymbol}}</div>
+                    <div class="col-xs-2 text-right">Total</div>
+                </div>
+                <div class="row invoice-item" ng-repeat="item in invoice.items" ng-animate="'slide-down'">
+                    <div class="col-xs-1 remove-item-container">
+                        <a href ng-hide="printMode" ng-click="removeItem(item)" title="Remove Item" class="box-btn">
+                            <i class="fas fa-times fa-lg"></i>
+                            </a>
+                    </div>
+                    <div class="col-xs-5 input-container">
+                        <input ng-model="item.description" placeholder="Description" />
+                    </div>
+                    <div class="col-xs-2 input-container">
+                        <input ng-model="item.qty" value="1" size="4" ng-required ng-validate="integer"
+                            placeholder="Quantity" />
+                    </div>
+                    <div class="col-xs-2 input-container">
+                        <input ng-model="item.cost" value="0.00" ng-required ng-validate="number" size="6"
+                            placeholder="Cost" />
+                    </div>
+                    <div class="col-xs-2 text-right input-container">
+                        {{item.cost * item.qty | currency: currencySymbol}}
+                    </div>
+                </div>
+            </div>
+            <div class="row res">
+                <div class="col-xs-10 text-right">Sub Total</div>
+                <div class="col-xs-2 text-right">
+                    {{invoiceSubTotalNoTax() | currency: currencySymbol}}
+                </div>
+            </div>
+            <div class="row res">
+                <div class="col-xs-10 text-right">Discount(%): <input ng-model="invoice.discount" ng-validate="number" style="width:43px;"></div>
+                <div class="col-xs-2 text-right">
+                    {{calculateDiscountNoTax() | currency: currencySymbol}}
+                </div>
+            </div>
+            <div class="row res">
+                <div class="col-xs-10 text-right">Grand Total:</div>
+                <div class="col-xs-2 text-right">
+                    {{calculateGrandTotalNoTax() | currency: currencySymbol}}
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-hide='printMode' class="input-container">
+            <input style="height:15px;" ng-model="notes" type="checkbox" class="checkmark" title="notes"
+                value="checked">
+            <label style="font-size:20px;"> Add Notes </label>
+        </div>
+        <div ng-show="notes">
+           <b> Note:</b>
+           <br />
+            <p>{{note}}</p>
+        </div>
+        <div data-ng-hide='printMode' class="input-container">
+            <input style="height:15px;" ng-model="termsncond" type="checkbox" class="checkmark" title="termsncond" value="checked">
+            <label style="font-size:20px;"> Add Terms & Conditions</label>
+        </div>
+
+        <div ng-show="termsncond">
+            <b>Terms & Conditions:</b><br />
+            <p>{{tcs}}</p>
+        </div>
+        
+    </div>
+
+    <div ng-hide="printMode" class="copy noPrint">
+        Insta-Invoice Made with
+        <span class="love">&#9829;</span> in India by
+        <a href="https://letsmedialab.com">LetsMedia Labs.</a>
+    </div>
+
+</body>
+
+</html>

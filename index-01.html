@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Sofbox - Responsive Software Landing Page</title>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="images/favicon.ico" />
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;Raleway:300,400,500,600,700,800,900" rel="stylesheet">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- owl-carousel -->
+      <link rel="stylesheet" href="css/owl-carousel/owl.carousel.css" />
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="css/font-awesome.css" />
+      <!-- Magnific Popup -->
+      <link rel="stylesheet" href="css/magnific-popup/magnific-popup.css" />
+      <!-- media element player -->
+      <link href="css/mediaelementplayer.min.css" rel="stylesheet" type="text/css" />
+      <!-- Animate -->
+      <link rel="stylesheet" href="css/animate.css" />
+      <!-- Ionicons -->
+      <link rel="stylesheet" href="css/ionicons.min.css">
+      <!-- variable -->
+      <link rel="stylesheet" href="css/variables.css">
+      <!-- Style -->
+      <link rel="stylesheet" href="css/style.css">
+       <!-- color -->
+      <link rel="stylesheet" href="css/color.css">
+      <!-- Responsive -->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- custom style -->
+      <link rel="stylesheet" href="css/custom.css" />
+   </head>
+   <body data-spy="scroll" data-offset="80">
+      <!-- loading -->
+      <div id="loading">
+         <div id="loading-center">
+            <div class="loader">
+               <div class="cube">
+                  <div class="sides">
+                     <div class="top"></div>
+                     <div class="right"></div>
+                     <div class="bottom"></div>
+                     <div class="left"></div>
+                     <div class="front"></div>
+                     <div class="back"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- loading End -->
+      <!-- Header -->
+      <header id="main-header">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-sm-12">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <a class="navbar-brand" href="index-03.html">
+                     <img class="img-fluid" src="images/logo.png" alt="#">
+                     </a>
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="ion-navicon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                           <li class="nav-item dropdown">
+                               <a class="nav-link active" href="#iq-home">Home</a>
+                               <div aria-labelledby="navbarDropdown0" class="dropdown-menu">
+                                 <a href="index.html" class="dropdown-item">
+                                    Classic
+                                 </a>
+                                 <a href="index-02.html" class="dropdown-item">
+                                   Simple
+                                </a>
+                                 <a href="index-01.html" class="dropdown-item">
+                                     Fancy
+                                 </a>
+                                   <!-- <a href="index-2.html" class="dropdown-item">
+                                       Index 03
+                                   </a> -->
+                               </div>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="#how-it-works">About</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="#software-features">Service</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="#great-screenshots">Screenshots</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="#pricing">Pricing</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="#team">Team</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="#blog">Blog</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="#contact">Contact</a>
+                           </li>
+                       </ul>
+                        <a href="javascript:void(0)" class="button bt-black pull-right">Download</a>
+                     </div>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- Banner -->
+      <section id="iq-home" class="iq-banner overview-block-pt iq-bg-over iq-over-blue-90 iq-parallax" data-jarallax='{"speed": 0.6}' style="background: url(images/bg/01.jpg);">
+         <div class="container">
+            <div class="banner-text">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <h1 class="text-uppercase iq-font-white iq-tw-3">We are building <b class="iq-tw-7">software</b> to help</h1>
+                     <p class="iq-font-white iq-pt-15 iq-mb-40">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley,</p>
+                     <div class="waves-box">
+                        <a href="https://www.youtube.com/watch?v=0O2aH4XLbto" class="iq-video popup-youtube"><i class="ion-ios-play-outline"></i></a>
+                        <div class="iq-waves">
+                           <div class="waves wave-1"></div>
+                           <div class="waves wave-2"></div>
+                           <div class="waves wave-3"></div>
+                        </div>
+                     </div>
+                     <a href="javascript:void(0)" class="button bt-black iq-mt-5 iq-ml-40">Download</a>
+                  </div>
+                  <div class="col-lg-6">
+                    <img class="banner-img img-fluid watch-img wow slideInDown" src="images/banner/19.png" alt="">
+                     <img class="banner-img wow bounceInDown" data-wow-duration="2s" src="images/banner/17.png" alt="">
+                     <img class="banner-phone img-fluid center-block wow fadeInUp" src="images/product/mob.png" alt="">
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="banner-objects">
+            <span class="banner-objects-01" data-bottom="transform:translatey(50px)" data-top="transform:translatey(-50px);">
+            <img src="images/drive/03.png" alt="drive02">
+            </span>
+            <span class="banner-objects-02 iq-fadebounce">
+            <span class="iq-round"></span>
+            </span>
+            <span class="banner-objects-03 iq-fadebounce">
+            <span class="iq-round"></span>
+            </span>
+         </div>
+      </section>
+      <!-- Banner End -->
+      <!-- Tab Features END -->
+      <!-- Sofbox Specialities -->
+      <section class="overview-block-ptb">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12 col-lg-3 col-md-6">
+                  <div class="iq-fancy-boxnew text-center">
+                     <div class="iq-icon icon-bg ">
+                        <i aria-hidden="true" class="ion-ios-monitor-outline"></i>
+                     </div>
+                     <div class="fancy-content">
+                        <h5 class="iq-tw-6 iq-pt-20 iq-pb-10">High Resolution</h5>
+                        <p>Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-12 col-lg-3 col-md-6 r4-mt-30">
+                  <div class="iq-fancy-boxnew text-center">
+                     <div class="iq-icon icon-bg">
+                        <i aria-hidden="true" class="ion-ios-settings"></i>
+                     </div>
+                     <div class="fancy-content">
+                        <h5 class="iq-tw-6 iq-pt-20 iq-pb-10">Color Schemes</h5>
+                        <p>Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-12 col-lg-3 col-md-6 r-mt-30">
+                  <div class="iq-fancy-boxnew text-center">
+                     <div class="iq-icon icon-bg">
+                        <i aria-hidden="true" class="ion-social-googleplus-outline"></i>
+                     </div>
+                     <div class="fancy-content">
+                        <h5 class="iq-tw-6 iq-pt-20 iq-pb-10">Google Fonts</h5>
+                        <p>Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-12 col-lg-3 col-md-6 r-mt-30">
+                  <div class="iq-fancy-boxnew text-center">
+                     <div class="iq-icon icon-bg">
+                        <i aria-hidden="true" class="ion-ios-heart-outline"></i>
+                     </div>
+                     <div class="fancy-content">
+                        <h5 class="iq-tw-6 iq-pt-20 iq-pb-10">Clean Codes</h5>
+                        <p>Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Sofbox Specialities END -->
+      <section id="how-it-works" class="overview-block-pb how-works">
+         <div class="animation-shap">
+            <div class="shap-bg"></div>
+         </div>
+         <div class="container-fluid">
+            <div class="row ">
+               <div class="col-lg-6 col-md-6 ">
+                  <img class="iq-works-imgs" src="images/drive/iPad-Mockup1.png" alt="drive01">
+               </div>
+               <div class="col-lg-4 col-md-5 mt-5">
+                  <h2 class="iq-tw-6 iq-mb-25">What is Sofbox ?</h2>
+                  <p class="iq-font-15">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  <a href="javascript:void(0)" class="button iq-mt-10">Click Here</a>
+                  <div class="row mt-3">
+                     <div class="col-lg-6 col-sm-12">
+                        <div class="media service-box ">
+                           <i aria-hidden="true" class="ion-ios-pie-outline"></i>
+                           <div class="media-body">
+                              <h5 class="mt-0">Design</h5>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-sm-12">
+                        <div class="media service-box">
+                           <i aria-hidden="true" class="ion-ios-grid-view-outline"></i>
+                           <div class="media-body">
+                              <h5 class="mt-0">Code</h5>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+           
+         </div>
+      </section>
+      <section id="how-works" class="overview-block-pb how-works r-mt-40">
+         <div class="container-fluid">
+            <div class="animationnew-shap">
+               <div class="shap-bg"></div>
+            </div>
+            <div class="row  flex-row-reverse">
+               <div class="col-lg-6 col-md-6">
+                  <img class="iq-works-imgs" src="images/drive/iPad-Mockup.png" alt="drive01">
+               </div>
+               <div class="col-lg-4 col-md-5">
+                  <h2 class="iq-mb-25 iq-tw-6">Variations</h2>
+                  <p class="iq-font-15">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  <a href="javascript:void(0)" class="button  iq-mt-5 ">Download</a>
+                  <div class="row mt-3">
+                     <div class="col-lg-6 col-sm-12">
+                        <div class="media service-box">
+                           <i aria-hidden="true" class="ion-ios-monitor-outline"></i>
+                           <div class="media-body">
+                              <h5 class="mt-0">functionality</h5>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-sm-12">
+                        <div class="media service-box">
+                           <i aria-hidden="true" class="ion-ios-gear-outline"></i>
+                           <div class="media-body">
+                              <h5 class="mt-0">Execute</h5>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="software-features" class="overview-block-ptb grey-bg">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="heading-title">
+                     <h3 class="title iq-tw-7">Sofbox Specialities </h3>
+                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley,</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-7 col-md-12">
+                  <img src="images/drive/iPad-Mockup.png" class="img-fluid" alt="#">
+               </div>
+               <div class="col-lg-5 col-md-12 left-img">
+                  <div class="media service-box ">
+                     <i aria-hidden="true" class="ion-ios-pie-outline"></i>
+                     <div class="media-body">
+                        <h5 class="mt-0">Design</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                     </div>
+                  </div>
+                  <div class="media service-box">
+                     <i aria-hidden="true" class="ion-ios-grid-view-outline"></i>
+                     <div class="media-body">
+                        <h5 class="mt-0">Code</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                     </div>
+                  </div>
+                  <div class="media service-box">
+                     <i aria-hidden="true" class="ion-ios-monitor-outline"></i>
+                     <div class="media-body">
+                        <h5 class="mt-0">functionality</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                     </div>
+                  </div>
+                  <div class="media service-box">
+                     <i aria-hidden="true" class="ion-ios-gear-outline"></i>
+                     <div class="media-body">
+                        <h5 class="mt-0">Execute</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Tab 4 -->
+      <div class="overview-block-ptb iq-tab horizontal blue-bg"  id="great-screenshots">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="heading-title iq-font-white">
+                     <h3 class="title iq-tw-7 iq-font-white">Sofbox Specialities </h3>
+                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley,</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-pills tabs-left justify-content-center" id="pills-tab2" role="tablist">
+                     <li class="nav-item iq-r-mb-15">
+                        <a class="nav-link active1 sof-box" id="retina1-tab" data-toggle="pill" href="#retina1" role="tab" aria-controls="retina1" aria-selected="true"><i class="ion-ios-color-wand-outline"></i>Retina Ready</a>
+                     </li>
+                     <li class="nav-item iq-r-mb-15">
+                        <a class="nav-link" id="designs1-tab" data-toggle="pill" href="#designs1" role="tab" aria-controls="designs1" aria-selected="false"><i class="ion-ios-heart-outline"></i>Latest Designs</a>
+                     </li>
+                     <li class="nav-item iq-r-mb-15">
+                        <a class="nav-link" id="customize1-tab" data-toggle="pill" href="#customize1" role="tab" aria-controls="customize1" aria-selected="false"><i class="ion-ios-settings"></i>Easy to Customize</a>
+                     </li>
+                     <li class="nav-item iq-r-mb-15">
+                        <a class="nav-link" id="clean1-tab" data-toggle="pill" href="#clean1" role="tab" aria-controls="clean1" aria-selected="false"><i class="ion-ios-checkmark-outline"></i>Clean</a>
+                     </li>
+                     <li class="nav-item iq-r-mb-15">
+                        <a class="nav-link" id="revolution1-tab" data-toggle="pill" href="#revolution1" role="tab" aria-controls="revolution1" aria-selected="false"><i class="ion-ios-albums-outline" aria-hidden="true"></i>Revolution Slider</a>
+                     </li>
+                  </ul>
+                  <!-- Tab panes -->
+                  <div class="tab-content iq-mt-30">
+                     <div class="tab-pane active" id="retina1">
+                        <div class="row flex-row-reverse">
+                           <div class="col-lg-6  col-md-6 iq-mb-30">
+                              <img src="images/product/07.png" class="img-fluid iq-pr-50" alt="">
+                           </div>
+                           <div class="col-lg-6  col-md-6 text-left align-self-center">
+                              <h6 class="iq-font-main iq-font-white iq-mb-10">We’re Creative Agency</h6>
+                              <h3 class="iq-tw-6 iq-font-white">We Are An Agency That Focuses On Digital Design Solutions</h3>
+                              <p class="iq-mt-30 iq-font-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                              <a href="javascript:void(0)" class="button bt-black">Let's Started</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane" id="designs1">
+                        <div class="row">
+                           <div class="col-lg-6 col-md-6 iq-mb-30">
+                              <img src="images/product/06.png" class="img-fluid iq-pr-50" alt="">
+                           </div>
+                           <div class="col-lg-6 col-md-6 text-left align-self-center">
+                              <h6 class="iq-font-main iq-font-white iq-mb-10">We’re Creative Agency</h6>
+                              <h3 class="iq-tw-6 iq-font-white">We Are An Agency That Focuses On Digital Design Solutions</h3>
+                              <p class="iq-mt-30 iq-font-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                              <a href="javascript:void(0)" class="button bt-black">Let's Started</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane" id="customize1">
+                        <div class="row flex-row-reverse">
+                           <div class="col-lg-6 col-md-6 iq-mb-30">
+                              <img src="images/product/07.png" class="img-fluid iq-pr-50" alt="">
+                           </div>
+                           <div class="col-lg-6 col-md-6 text-left align-self-center">
+                              <h6 class="iq-font-main iq-font-white iq-mb-10">We’re Creative Agency</h6>
+                              <h3 class="iq-tw-6 iq-font-white">We Are An Agency That Focuses On Digital Design Solutions</h3>
+                              <p class="iq-mt-30 iq-font-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                              <a href="javascript:void(0)" class="button bt-black">Let's Started</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane" id="clean1">
+                        <div class="row">
+                           <div class="col-lg-6 col-md-6 iq-mb-30">
+                              <img src="images/product/05.png" class="img-fluid iq-pr-50" alt="">
+                           </div>
+                           <div class="col-lg-6 col-md-6 text-left align-self-center">
+                              <h6 class="iq-font-main iq-font-blue iq-mb-10">We’re Creative Agency</h6>
+                              <h3 class="iq-tw-6 iq-font-white">We Are An Agency That Focuses On Digital Design Solutions</h3>
+                              <p class="iq-mt-30 iq-font-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                              <a href="javascript:void(0)" class="button bt-black">Let's Started</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane" id="revolution1">
+                        <div class="row flex-row-reverse">
+                           <div class="col-lg-6 col-md-6 iq-mb-30">
+                              <img src="images/product/06.png" class="img-fluid iq-pr-50" alt="">
+                           </div>
+                           <div class="col-lg-6 col-md-6 text-left align-self-center">
+                              <h6 class="iq-font-main iq-font-blue iq-mb-10">We’re Creative Agency</h6>
+                              <h3 class="iq-tw-6 iq-font-white">We Are An Agency That Focuses On Digital Design Solutions</h3>
+                              <p class="iq-mt-30 iq-font-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                              <a href="javascript:void(0)" class="button bt-black">Let's Started</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane" id="responsive1">
+                        <div class="row">
+                           <div class="col-lg-6 col-md-6 iq-mb-30">
+                              <img src="images/product/07.png" class="img-fluid iq-pr-50" alt="">
+                           </div>
+                           <div class="col-lg-6 col-md-6 text-left align-self-center">
+                              <h6 class="iq-font-main iq-font-blue iq-mb-10">We’re Creative Agency</h6>
+                              <h3 class="iq-tw-6 iq-font-white">We Are An Agency That Focuses On Digital Design Solutions</h3>
+                              <p class="iq-mt-30 iq-font-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                              <a href="javascript:void(0)" class="button bt-black">Let's Started</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="clearfix"></div>
+            </div>
+         </div>
+      </div>
+      <!-- Tab 4 -->
+      <!-- About Our App -->
+      <section class="overview-block-ptb grey-bg">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 align-self-center ">
+                  <h2 class="iq-mb-25">The Best Program UI</h2>
+                  <p class="iq-font-15">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  <div class="media iq-mt-30">
+                     <img class="mr-3 rounded-circle align-self-center" src="images/testimonial/01.jpg" alt="Generic placeholder image">
+                     <div class="media-body iq-pr-30 iq-pt-15">
+                        <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-6 align-self-center r-mt-30">
+                  <div class="media-wrapper">
+                     <video style="width:100%;height:100%;" id="player1" poster="video/01.jpg" controls="" preload="none">
+                        <source type="video/m4v" src="video/01.m4v">
+                        <source type="video/webm" src="video/01.webm">
+                        <source type="video/ogg" src="video/01.ogv">
+                     </video>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- About Our App END -->
+      <!-- Clients -->
+      <div class="iq-our-clients iq-our-new white-bg iq-ptb-50">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 col-md-12">
+                  <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="true" data-dots="false" data-items="5" data-items-laptop="5" data-items-tab="4" data-items-mobile="3" data-items-mobile-sm="1" data-margin="30" >
+                     <div class="item"> <img class="img-fluid center-block" src="images/clients/01.png" alt="#"></div>
+                     <div class="item"> <img class="img-fluid center-block" src="images/clients/02.png" alt="#"></div>
+                     <div class="item"> <img class="img-fluid center-block" src="images/clients/03.png" alt="#"></div>
+                     <div class="item"> <img class="img-fluid center-block" src="images/clients/04.png" alt="#"></div>
+                     <div class="item"> <img class="img-fluid center-block" src="images/clients/05.png" alt="#"></div>
+                     <div class="item"> <img class="img-fluid center-block" src="images/clients/06.png" alt="#"></div>
+                     <div class="item"> <img class="img-fluid center-block" src="images/clients/07.png" alt="#"></div>
+                     <div class="item"> <img class="img-fluid center-block" src="images/clients/08.png" alt="#"></div>
+                     <div class="item"> <img class="img-fluid center-block" src="images/clients/09.png" alt="#"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Clients END -->
+      <section class="overview-block-ptb blue-bg text-center">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h3 class="iq-tw-6 iq-mb-10 iq-font-white">Lorem Ipsum has been the industry's </h3>
+                  <h6 class="iq-font-white iq-mb-30">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, naking this.</h6>
+                  <a href="javascript:void(0)" class="button bt-black">Let's Started</a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Footer -->
+      <footer id="contact" class="iq-footerr iq-ptb-40 ">
+         <div class="container">
+           <div class="row">
+             <div class="col-lg-3 col-md-6 col-sm-6 iq-mtb-20">
+               <div class="logo">
+                 <img class="img-fluid logo_img"  src="images/color-customizer/color-1.png" alt="#">
+                 <div class="iq-font-black  iq-mt-15">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</div>
+               </div>
+             </div>
+             <div class="col-lg-3 col-md-6 col-sm-6 iq-mtb-20">
+               <div class="contact-bg">
+                 <h5 class="iq-tw-6 iq-font-black  iq-mb-10">Address</h5>
+                 <ul class="iq-contact">
+                   <li>
+                     <i class="ion-ios-location-outline"></i>
+                     <p>1234 North Luke Lane, South Bend, IN 360001</p>
+                   </li>
+                   <li>
+                     <i class="ion-ios-telephone-outline"></i>
+                     <p>+0123 456 789</p>
+                   </li>
+                   <li>
+                     <i class="ion-ios-email-outline"></i>
+                     <p>mail@sofbox.com</p>
+                   </li>
+                 </ul>
+               </div>
+             </div>
+             <div class="col-lg-3 col-md-6 col-sm-6 iq-mtb-20">
+               <h5 class="iq-tw-6 iq-font-black  iq-mb-10">Menu</h5>
+               <div class="row">
+                 <div class="col-lg-6 col-md-6 col-sm-6">
+                   <ul class="menu">
+                     <li><a href="javascript:void(0)">Home</a></li>
+                     <li><a href="javascript:void(0)">About Us</a></li>
+                     <li><a href="javascript:void(0)">Our Team</a></li>
+                     <li><a href="javascript:void(0)">Portfolio</a></li>
+                   </ul>
+                 </div>
+                 <div class="col-lg-6 col-md-6 col-sm-6">
+                   <ul class="menu">
+                     <li><a href="javascript:void(0)">Faqs</a></li>
+                     <li><a href="blog-2-columns.html">Blog</a></li>
+                     <li><a href="javascript:void(0)">Our Services</a></li>
+                     <li><a href="javascript:void(0)">Contact Us</a></li>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+             <div class="col-lg-3 col-md-6 col-sm-6 iq-mtb-20">
+               <h5 class="iq-tw-6 iq-font-black  iq-mb-10">Help</h5>
+               <ul class="office-day">
+                 <li>
+                   <a href="javascript:void(0)">Help Center</a>
+                 </li>
+                 <li>
+                   <a href="javascript:void(0)">Product</a>
+                 </li>
+                 <li>
+                   <a href="javascript:void(0)">Tool</a>
+                 </li>
+               </ul>
+             </div>
+           </div>
+           <hr>
+           <div class="row iq-mt-20">
+             <div class="col-auto mr-auto">
+               <ul class="link">
+                 <li class="d-inline-block iq-mr-20"><a href="javascript:void(0)">Term and Condition</a></li>
+                 <li class="d-inline-block"><a href="javascript:void(0)"> Privacy Policy</a></li>
+               </ul>
+             </div>
+             <div class="col-auto">
+               <div class="iq-copyright ">
+                 Copyright @ <script>document.write(new Date().getFullYear())</script> <a href="index-02.html">Sofbox</a> All Rights Reserved
+               </div>
+             </div>
+           </div>
+         </div>
+       </footer>
+      <!-- Footer END -->
+      <!-- back-to-top -->
+      <div id="back-to-top">
+         <a class="top" id="top" href="#top"> <i class="ion-ios-upload-outline"></i> </a>
+      </div>
+      <!-- back-to-top End -->
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Main js -->
+      <script src="js/main.js"></script>
+      <!-- Google captcha code Js -->
+      <script src='https://www.google.com/recaptcha/api.js'></script>
+      <!-- Custom -->
+      <script src="js/custom.js"></script>
+   </body>
+</html>
