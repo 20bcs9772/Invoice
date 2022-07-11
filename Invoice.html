@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <title>Insta Invoicing - By LetsMedia Lab</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Insta Invoicing - By LetsMedia Lab for creating Invoices">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="css/invoice.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="js/maininvoice1.js"></script>
+    <script src="js/script.js"></script>
+
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title sidebar-head bg-black white">Menu</span>
+            <nav class="mdl-navigation">
+                <div class=" list">
+                    <div>
+                        <div>
+                            <div onmouseenter="showEdit(0)" onmouseleave="showEdit(0)">
+                                <a href="#invoice-id" class="sidebar-links">
+                                    Invoice Id
+                                    <i class="pencil alternate icon right aligned" hidden></i>
+                                </a>
+                            </div>
+                            <div onmouseenter="showEdit(1)" onmouseleave="showEdit(1)">
+                                <a href="#invoice-logo" class="sidebar-links">
+                                    Business Logo
+                                    <i class="pencil alternate icon right aligned" hidden></i>
+                                </a>
+                            </div>
+                            <div onmouseenter="showEdit(2)" onmouseleave="showEdit(2)">
+                                <!-- <a href="#invoice-date" class="sidebar-links">
+                                    Invoice Date -->
+                                <i class="pencil alternate icon right aligned" style="display: none ;" hidden></i>
+                                <!-- </a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div onmouseenter="showEdit(3)" onmouseleave="showEdit(3)">
+                                <a href="#invoice-bill-to" class="sidebar-links">
+                                    Bill To
+                                    <i class="pencil alternate icon right aligned" hidden></i>
+                                </a>
+                            </div>
+                            <div onmouseenter="showEdit(4)" onmouseleave="showEdit(4)">
+                                <a href="#invoice-bill-from" class="sidebar-links">
+                                    Bill From
+                                    <i class="pencil alternate icon right aligned" hidden></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div onmouseenter="showEdit(5)" onmouseleave="showEdit(5)">
+                        <a href="#table-sec" class="sidebar-links">
+                            Invoice Details
+                            <i class="pencil alternate icon right aligned" hidden></i>
+                        </a>
+                    </div>
+                    <div onmouseenter="showEdit(6)" onmouseleave="showEdit(6)">
+                        <a href="#invoice-discount" class="sidebar-links">
+                            Discount %
+                            <i class="pencil alternate icon right aligned" hidden></i>
+                        </a>
+                    </div>
+                    <div onmouseenter="showEdit(7)" onmouseleave="showEdit(7)">
+                        <a href="#notes" class="sidebar-links">
+                            Notes
+                            <i class="pencil alternate icon right aligned" hidden></i>
+                        </a>
+                    </div>
+                    <div onmouseenter="showEdit(8)" onmouseleave="showEdit(8)">
+                        <a href="#tcs" class="sidebar-links">
+                            Terms and Conditions
+                            <i class="pencil alternate icon right aligned" hidden></i>
+                        </a>
+                    </div>
+                    <!-- <div onmouseenter="showEdit(7)" onmouseleave="showEdit(7)">
+                        <a href="" class="sidebar-links">
+                            iojoiio
+                            <i class="pencil alternate icon right aligned" hidden></i>
+                        </a>
+                    </div> -->
+                </div>
+            </nav>
+        </div>
+        <main class="mdl-layout__content" id="invoice" ng-app="invoicing" ng-controller="InvoiceCtrl">
+            <div class="page-content">
+                <!-- Your content goes here -->
+                <div class="ui fluid raised container">
+                    <br><br><br>
+                    <div class="ui grid">
+                        <div class="one wide column">
+                        </div>
+                        <div class="fourteen wide column center aligned">
+                            <div class="ui small steps raised">
+                                <div class="active step">
+                                    <i class="wpforms icon"></i>
+                                    <div class="content">
+                                        <div class="title">Invoice Details</div>
+                                        <div class="description">( Required )</div>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <i class="file alternate icon"></i>
+                                    <div class="content">
+                                        <div class="title">Select <br>Template</div>
+                                    </div>
+                                </div>
+                                <div class="disabled step">
+                                    <i class="print icon"></i>
+                                    <div class="content">
+                                        <div class="title">Save Invoice</div>
+                                        <div class="description">( Download or Print Invoice )</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br><br>
+                            <form action="./template-select.html" id="invoice-form">
+                                <div class="ui grid">
+                                    <div class="wide column ui card">
+                                        <br>
+                                        <div class="center aligned">
+                                            <h1 class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                <input class="mdl-textfield__input center aligned ui header" type="text"
+                                                    id="invoice_title" ng-model="invoice.invoice_title"
+                                                    placeholder="TITLE">
+                                                <label class="mdl-textfield__label" for="invoice_title"></label>
+                                            </h1>
+
+                                            <p>
+                                                <label
+                                                class="mdl-switch mdl-js-switch mdl-js-ripple-effect checkbox-cont"
+                                                    for="GST" style="margin: 2em 0 0 4em ;">
+                                                    <span class="mdl-switch__label">
+                                                        Do you want to generate a GST bill ?
+                                                    </span>
+                                                    <input type="checkbox" class="mdl-switch__input checkmark Check" ng-model="gst" id="GST" title="GST" name="gst-bill">
+                                                </label>
+                                            </p>
+                                        </div>
+                                        <div class="ui very padded vertical segment">
+                                            <div class="ui form grid">
+                                                <div class="five wide column">
+                                                    <table class="mdl-data-table add-details-table">
+                                                        <tbody id="invoice-id">
+                                                            <tr>
+                                                                <td class="ui header">Invoice #</td>
+                                                                <td class="inline field">
+                                                                    <input type="text" ng-model="invoice.invoice_number"
+                                                                        id="invoice-number" placeholder="">
+                                                                    <span class="focus-border"></span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr ng-show="gst" id="gst_number">
+                                                                <td class="ui header">GST No
+                                                                </td>
+                                                                <td class="inline field left aligned">
+                                                                    <input type="text" ng-model="invoice.gst_number"
+                                                                        pattern="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$"
+                                                                        placeholder="eg. 06BZAHM6385P6Z2">
+                                                                    <span class="focus-border"></span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr ng-repeat="item in additionalDetails.adonitems"
+                                                                ng-animate="'slide-down'">
+                                                                <td class="ui header" ng-model="item.key">{{item.key}}
+                                                                </td>
+                                                                <td class="left aligned table-options">
+                                                                    <span ng-model="item.description">
+                                                                        {{item.description}}
+                                                                    </span>
+                                                                    <!-- <span href title="Remove"
+                                                                        ng-click="removeaddonItem(item)" class="">
+                                                                        <i class="close icon"></i>
+                                                                    </span> -->
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="six wide column"></div>
+                                                <div class="image-input five wide column " id="invoice-logo">
+                                                    <input type="file" id="imgInp">
+                                                    <label ng-show="logoRemoved" id="tt3" for="imageInput"
+                                                        ng-click="editAndToggleLogo()"
+                                                        class="image-button padded isLogo">
+                                                        <i class="image icon"></i> Add Business Logo
+                                                    </label>
+                                                    <div class="mdl-tooltip" data-mdl-for="tt3">
+                                                        Edit Details
+                                                    </div>
+
+                                                    <img ng-hide="logoRemoved" ng-click="editLogo()" title="Edit Logo"
+                                                        id="company_logo" ng-src="{{ logo }}">
+                                                        
+                                                    <br>
+                                                    <span class="isLogo" id="tt4" ng-hide="logoRemoved" ng-click="toggleLogo()">
+                                                        <i class="trash alternate icon"></i> Remove
+                                                    </span>
+                                                    <div class="mdl-tooltip" data-mdl-for="tt4">
+                                                        Remove Logo
+                                                    </div>
+                                                </div>
+                                                <div class="four wide column add-details">
+                                                    <span id="tt1" class="" ng-click="addnewDetails()">
+                                                        <button type="button" class="ui circular plus icon button">
+                                                            <i class="plus icon"></i>
+                                                        </button>
+                                                    </span>
+                                                    <span id="tt2" class="">
+                                                        <button type="button" class="ui circular edit icon button">
+                                                            <i class="edit icon"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                <div class="mdl-tooltip" data-mdl-for="tt1">
+                                                    Add Details
+                                                </div>
+                                                <div class="mdl-tooltip" data-mdl-for="tt2">
+                                                    Edit Details
+                                                </div>
+
+                                                <div class="ui modal">
+                                                    <i class="close icon"></i>
+                                                    <div class="header">
+                                                        Add Additional Details
+                                                    </div>
+                                                    <div class="scrolling content">
+                                                        <div ng-repeat="item in additionalDetails.adonitems"
+                                                            ng-animate="'slide-down'">
+                                                            <div
+                                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                                <input class="mdl-textfield__input" ng-model="item.key"
+                                                                    placeholder="Key" type="text"
+                                                                    id="sample_key{{additionalDetails.adonitems.indexOf(item)}}">
+                                                                <label class="mdl-textfield__label"
+                                                                    for="sample_key{{additionalDetails.adonitems.indexOf(item)}}"></label>
+                                                            </div>
+                                                            <span class="colon">:</span>
+                                                            <div
+                                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                                <input class="mdl-textfield__input"
+                                                                    ng-model="item.description" required type="text"
+                                                                    placeholder="Value"
+                                                                    id="sample_value{{additionalDetails.adonitems.indexOf(item)}}">
+                                                                <label class="mdl-textfield__label"
+                                                                    for="sample_value{{additionalDetails.adonitems.indexOf(item)}}"></label>
+                                                            </div>
+                                                            <span href title="Remove" ng-click="removeaddonItem(item)"
+                                                                class="">
+                                                                <i class="close icon"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="actions">
+                                                        <div class="ui blue icon button" ng-click="addnewDetails()"
+                                                            title="Add">
+                                                            <i class="plus icon"></i>
+                                                        </div>
+                                                        <div class="ui buttons">
+                                                            <button class="ui deny button">Cancel</button>
+                                                            <div class="or"></div>
+                                                            <button class="ui positive button"
+                                                                ng-click="saveAddonDetails()">Save</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ui very padded vertical segment">
+                                            <div class="box-drop-even ui grid">
+                                                <div class=" bg-white seven wide column" id="invoice-bill-to">
+                                                    <h2 class="center aligned ui header">Bill To</h2>
+                                                    <div>
+                                                        <div>
+                                                            <div
+                                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                                <input class="mdl-textfield__input" type="text"
+                                                                    id="sample1" ng-model="invoice.customer_info.name">
+                                                                <label class="mdl-textfield__label"
+                                                                    for="sample1">Name</label>
+                                                            </div>
+                                                            <div
+                                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                                <input class="mdl-textfield__input" type="text"
+                                                                    ng-model="invoice.customer_info.web_link"
+                                                                    id="sample2">
+                                                                <label class="mdl-textfield__label"
+                                                                    for="sample2">Email</label>
+                                                            </div>
+                                                            <div
+                                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                                <input class="mdl-textfield__input"
+                                                                    ng-model="invoice.customer_info.address1"
+                                                                    type="text" id="sample3">
+                                                                <label class="mdl-textfield__label"
+                                                                    for="sample3">Address
+                                                                    1</label>
+                                                            </div>
+                                                            <div
+                                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                                <input class="mdl-textfield__input" required
+                                                                    ng-model="invoice.customer_info.address2"
+                                                                    type="text" id="sample4">
+                                                                <label class="mdl-textfield__label"
+                                                                    for="sample4">Address
+                                                                    2</label>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class=" ui search mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                            <select required
+                                                                ng-options="state.name for state in availableStateIN"
+                                                                name="serviceState" ng-model="serviceState"
+                                                                class="mdl-textfield__input">
+                                                                <!-- <i class="world icon"></i> -->
+                                                            </select>
+                                                            <label class="mdl-textfield__label" for="sample4">Service
+                                                                State</label>
+                                                        </div>
+                                                        <div
+                                                            class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                            <input class="mdl-textfield__input" type="text"
+                                                                ng-model="invoice.customer_info.postal" id="sample5">
+                                                            <label class="mdl-textfield__label" for="sample5">ZIP / PIN
+                                                                CODE</label>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-white seven wide column" id="invoice-bill-from">
+                                                    <h2 class="center aligned ui header">Bill From</h2>
+                                                    <div>
+                                                        <div>
+                                                            <div
+                                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                                <input class="mdl-textfield__input"
+                                                                    ng-model="invoice.company_info.name" type="text"
+                                                                    id="sample6">
+                                                                <label class="mdl-textfield__label"
+                                                                    for="sample6">Name</label>
+                                                            </div>
+                                                            <div
+                                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                                <input class="mdl-textfield__input"
+                                                                    ng-model="invoice.company_info.web_link" type="text"
+                                                                    id="sample7">
+                                                                <label class="mdl-textfield__label"
+                                                                    for="sample7">Email</label>
+                                                            </div>
+                                                            <div
+                                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                                <input class="mdl-textfield__input"
+                                                                    ng-model="invoice.company_info.address1" type="text"
+                                                                    id="sample8">
+                                                                <label class="mdl-textfield__label"
+                                                                    for="sample8">Address
+                                                                    1</label>
+                                                            </div>
+                                                            <div
+                                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                                <input class="mdl-textfield__input"
+                                                                    ng-model="invoice.company_info.address2" type="text"
+                                                                    id="sample9">
+                                                                <label class="mdl-textfield__label"
+                                                                    for="sample9">Address
+                                                                    2</label>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class=" ui search mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                            <select required
+                                                                ng-options="state.name for state in availableStateIN"
+                                                                name="supplierState" ng-model="supplierState"
+                                                                class="mdl-textfield__input">
+                                                                <!-- <i class="world icon"></i> -->
+                                                            </select>
+                                                            <label class="mdl-textfield__label" for="sample4">Supplier
+                                                                State</label>
+                                                        </div>
+                                                        <div
+                                                            class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                            <input class="mdl-textfield__input" type="text"
+                                                                ng-model="invoice.company_info.postal" id="sample10">
+                                                            <label class="mdl-textfield__label" for="sample10">ZIP / PIN
+                                                                CODE</label>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ui very padded vertical segment" id="table-sec">
+                                            <div class="table-options">
+                                                <!-- <label
+                                                    class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect checkbox-cont"
+                                                    for="GST" style="padding-top: auto ;">
+                                                    <input type="checkbox" class="mdl-checkbox__input checkmark Check"
+                                                        ng-model="gst" id="GST" title="GST" name="gst-bill">
+                                                    <span class="mdl-checkbox__label">Generate GST Bill</span>
+                                                </label> -->
+                                                <section class=" d-inline-block float-end text-center">
+                                                    <select ng-model='currencySymbol' class="ui dropdown"
+                                                        name="currency"
+                                                        ng-options='currency.symbol as currency.name for currency in availableCurrencies'></select>
+                                                </section>
+                                            </div>
+                                            <br>
+                                            <div id="table">
+                                                <table class="ui stackable table">
+                                                    <thead>
+                                                        <tr ng-show="gst">
+                                                            <th class="mdl-data-table__cell--non-numeric">DESCRIPTION
+                                                            </th>
+                                                            <th class="left aligned">HSN</th>
+                                                            <th class="left aligned">QUANTITY</th>
+                                                            <th class="left aligned">COST {{currencySymbol}}</th>
+                                                            <th class="left aligned"
+                                                                ng-hide="supplierState != serviceState">
+                                                                SGST%</th>
+                                                            <th class="left aligned"
+                                                                ng-hide="supplierState != serviceState">
+                                                                CGST%</th>
+                                                            <th class="left aligned"
+                                                                ng-hide="supplierState == serviceState">
+                                                                IGST {{currencySymbol}}
+                                                            </th>
+                                                            <th class="center aligned">TOTAL</th>
+                                                            <th class="text-center icon">
+                                                                <a class="box-btn" title="Add Item" href
+                                                                    ng-click="addItem()">
+                                                                    <i class="plus square outline icon black"></i>
+                                                                </a>
+                                                            </th>
+                                                        </tr>
+                                                        <tr ng-show="!gst">
+                                                            <th class="" class="mdl-data-table__cell--non-numeric">
+                                                                DESCRIPTION</th>
+                                                            <th class="left aligned">QUANTITY</th>
+                                                            <th class="left aligned">COST {{currencySymbol}}</th>
+                                                            <th class="left aligned">TOTAL</th>
+                                                            <th class="text-center">
+                                                                <a class="box-btn" title="Add Item" href
+                                                                    ng-click="addItem()">
+                                                                    <i class="plus square outline icon black"></i>
+                                                                </a>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-show="gst" ng-repeat="item in invoice.items"
+                                                            ng-animate="'slide-down'">
+                                                            <td>
+                                                                <div class=" input-container">
+                                                                    <input ng-model="item.description"
+                                                                        placeholder="Description" />
+                                                                </div>
+                                                            </td>
+                                                            <td class="">
+                                                                <div class=" input-container">
+                                                                    <input ng-model="item.hsn" value="HSN1"
+                                                                        class="text-center" ng-required size="8"
+                                                                        placeholder="HSN" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class=" input-container">
+                                                                    <input class="text-center" ng-model="item.qty"
+                                                                        value="1" size="3" ng-required
+                                                                        ng-validate="integer" placeholder="Quantity" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class=" input-container">
+                                                                    <input class="text-center" ng-model="item.cost"
+                                                                        value="0.00" ng-required ng-validate="number"
+                                                                        size="8" placeholder="Cost" />
+                                                                </div>
+                                                            </td>
+                                                            <td ng-hide="supplierState != serviceState">
+                                                                <div class=" input-container">
+                                                                    <input class="text-center" ng-model="item.sgst"
+                                                                        value="0.00" ng-required ng-validate="number"
+                                                                        size="8" placeholder="SGST" />
+                                                                </div>
+                                                            </td>
+                                                            <td ng-hide="supplierState != serviceState">
+                                                                <div class=" input-container">
+                                                                    <input class="text-center" ng-model="item.cgst"
+                                                                        value="0.00" ng-required ng-validate="number"
+                                                                        size="8" placeholder="CGST" />
+                                                                </div>
+                                                            </td>
+                                                            <td ng-hide="supplierState == serviceState">
+                                                                <div class=" input-container">
+                                                                    <input class="text-center" ng-model="item.igst"
+                                                                        value="0.00" ng-required ng-validate="number"
+                                                                        size="6" placeholder="IGST" />
+                                                                </div>
+                                                            </td>
+                                                            <td ng-hide="supplierState != serviceState">
+                                                                {{(item.cost * item.qty + item.cost * item.qty *
+                                                                item.cgst/100 +
+                                                                item.cost *
+                                                                item.qty *
+                                                                item.sgst/100) | currency: currencySymbol}}
+                                                            </td>
+                                                            <td ng-hide="supplierState == serviceState">
+                                                                {{(item.cost * item.qty + item.cost * item.qty *
+                                                                item.igst/100 )
+                                                                | currency:
+                                                                currencySymbol}}
+                                                            </td>
+                                                            <td class="remove-item-container text-center">
+                                                                <a href ng-click="removeItem(item)" title="Remove Item"
+                                                                    class="box-btn">
+                                                                    <i class="trash alternate icon"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr ng-show="!gst" ng-repeat="item in invoice.items"
+                                                            ng-animate="'slide-down'">
+                                                            <td>
+                                                                <div class="input-container">
+                                                                    <input ng-model="item.description"
+                                                                        placeholder="Description" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="input-container">
+                                                                    <input class="center aligned" ng-model="item.qty"
+                                                                        value="1" size="3" ng-required
+                                                                        ng-validate="integer" placeholder="Quantity" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="input-container">
+                                                                    <input class="text-center" ng-model="item.cost"
+                                                                        value="0.00" ng-required ng-validate="number"
+                                                                        size="8" placeholder="Cost" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                {{item.cost * item.qty | currency: currencySymbol}}
+                                                            </td>
+                                                            <td class="remove-item-container text-center">
+                                                                <a href ng-click="removeItem(item)" title="Remove Item"
+                                                                    class="box-btn">
+                                                                    <i class="trash alternate icon"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <br>
+                                            <div class="total-table-cont">
+                                                <div class="">
+                                                    <table class="stackable mdl-data-table add-details-table">
+                                                        <tbody class="">
+                                                            <tr>
+                                                                <td class="ui header left aligned">SUBTOTAL</td>
+                                                                <td ng-show="!gst" class="ui header left aligned">
+                                                                    {{invoiceSubTotalNoTax() | currency:
+                                                                    currencySymbol}}
+                                                                </td>
+                                                                <td ng-show="gst" class="ui header left aligned">
+                                                                    {{invoiceSubTotal() | currency: currencySymbol}}
+                                                                </td>
+                                                            </tr>
+                                                            <tr ng-show="gst">
+                                                                <td class="ui header left aligned"
+                                                                    ng-hide="supplierState == serviceState">
+                                                                    Net Tax (GST/IGST)</td>
+                                                                <td ng-hide="supplierState == serviceState"
+                                                                    class="ui header left aligned">
+                                                                    {{calculateNetGSTTax() | currency: currencySymbol}}
+                                                                </td>
+                                                                <td class="ui header left aligned"
+                                                                    ng-hide="supplierState != serviceState">
+                                                                    Net Tax (CGST+SGST)</td>
+                                                                <td ng-hide="supplierState != serviceState"
+                                                                    class="ui header left aligned">
+                                                                    {{calculateNetTax() | currency: currencySymbol}}
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="" id="invoice-discount">
+                                                                <td
+                                                                    class="ui header left aligned input-container overflow-hidden">
+                                                                    Discount(%):
+                                                                    <input ng-model="invoice.discount"
+                                                                        style="max-width: 15% ;" ng-validate="number">
+                                                                </td>
+                                                                <td ng-show="!gst" class="ui header left aligned">
+                                                                    {{calculateDiscountNoTax() | currency:
+                                                                    currencySymbol}}
+                                                                </td>
+                                                                <td ng-show="gst" class="ui header left aligned">
+                                                                    {{calculateDiscountGST() | currency:
+                                                                    currencySymbol}}
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                        <tfoot class="total-table">
+                                                            <tr ng-show="!gst">
+                                                                <th class="ui header left aligned">GRAND TOTAL</th>
+                                                                <th ng-show="!gst" class="ui header left aligned">
+                                                                    {{calculateGrandTotalNoTax() | currency:
+                                                                    currencySymbol}}
+                                                                </th>
+                                                            </tr>
+                                                            <tr ng-show="gst">
+                                                                <th class="ui header left aligned">GRAND TOTAL</th>
+                                                                <th ng-hide="supplierState == serviceState"
+                                                                    class="ui header left aligned">
+                                                                    {{calculateGrandTotalwithIGST() | currency:
+                                                                    currencySymbol}}
+                                                                </th>
+                                                                <th ng-hide="supplierState != serviceState"
+                                                                    class="ui header left aligned">
+                                                                    {{calculateGrandTotalwithCGSGST() | currency:
+                                                                    currencySymbol}}
+                                                                </th>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <br><br>
+                                            <!-- <div class="notes-tcs"> -->
+                                            <div class="input-container notes">
+                                                <label style="font-size:20px;"
+                                                    class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect notes "
+                                                    for="notes">
+                                                    <span class="mdl-checkbox__label  left aligned">Add Notes</span>
+                                                    <input style="height:15px;" ng-model="notes" type="checkbox"
+                                                        class="mdl-checkbox__input Check" id="notes" title="notes"
+                                                        name="notescheck">
+
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div ng-show="notes" class="notes ui form">
+                                                <div class="field">
+                                                    <label class="left aligned">Notes</label>
+                                                    <textarea id="inNotes" rows="5" cols="135" name="notes"></textarea>
+                                                </div>
+                                                <br>
+                                            </div>
+
+                                            <div class="input-container tcs">
+                                                <label style="font-size:20px;"
+                                                    class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect notes "
+                                                    for="tcs">
+                                                    <span class="mdl-checkbox__label  left aligned">
+                                                        Add Terms & Conditions
+                                                    </span>
+                                                    <input style="height:15px;" ng-model="termsncond" type="checkbox"
+                                                        name="tcscheck" class="mdl-checkbox__input Check" id="tcs"
+                                                        title="Terms & Conditions">
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div ng-show="termsncond" class="tcs ui form">
+                                                <div class="field">
+                                                    <label class="left aligned">Terms & Conditions</label>
+                                                    <textarea rows="5" cols="135" id="inTcs"
+                                                        name="tcs">Please pay within 15 days from the date of invoice</textarea>
+                                                </div>
+                                            </div>
+                                            <!-- </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br>
+                                <button
+                                    class="mdl-button save-btn mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect"
+                                    ng-click="saveDetails()" type="submit">
+                                    <a style="color:white;">Save and Continue</a>
+                                </button>
+                                <button type="button"
+                                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                                    style="margin: 0 10px;" ng-click="clearLocalStorage()">
+                                    Reset
+                                </button>
+                                <br>
+                            </form>
+                        </div>
+                        <div class="one wide column">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+
+
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="js/invoice.js"></script>
+    <script>
+        // document.getElementById("inDate").defaultValue = new Date().toISOString().split("T")[0];
+
+        let checks = document.querySelectorAll(".Check");
+        let isLogoRemoved = document.querySelectorAll(".isLogo");
+        let arr = [true, false, false, true];
+        checks.forEach((check, index) => {
+            check.addEventListener('change', function () {
+                arr[index] = this.checked;
+            })
+        })
+
+        isLogoRemoved.forEach(logo => {
+            logo.addEventListener('click', () => {
+                arr[3] = !(arr[3])
+            })
+        })
+
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.ui.dropdown').dropdown();
+        });
+
+        $('form').submit(function (e) {
+            e.preventDefault();
+            let data = [...e.currentTarget.elements]
+                .filter((ele) => ele.type !== "submit")
+                .map((ele) => {
+                    if (ele.getAttribute("name") !== null) {
+                        return {
+                            [ele.getAttribute("name")]: ele.type === "file" ? ele.files : ele.value,
+                        };
+                    }
+                })
+                .filter(ele => ele !== undefined);
+            let otherDetails = {
+                serviceState: states[parseInt(data[1].serviceState.split(":")[1]) - 3].name,
+                supplierState: states[parseInt(data[2].supplierState.split(":")[1]) - 3].name,
+                currencySymbol: data[3].currency.split(":")[1],
+                notes: data[5].notes,
+                tcs: data[7].tcs,
+                isGst: arr[0],
+                isNotes: arr[1],
+                isTcs: arr[2],
+                isLogoRemoved: arr[3]
+            };
+            localStorage.setItem("otherDetails", JSON.stringify(otherDetails));
+            window.location.href = 'template-select.html';
+        })
+        $(".add-details").click(function () {
+            $('.ui.modal').modal('show');
+        })
+    </script>
+</body>
+
+</html>
